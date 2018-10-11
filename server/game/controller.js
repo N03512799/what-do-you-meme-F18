@@ -1,0 +1,18 @@
+const express = require('express');
+const {Game, Player} = require('./model');
+
+var game = new Game();
+
+const app = express.Router();
+
+app.get("/", function(req, res){
+    res.send(game);
+});
+
+app.post('/players', (req, res) => {
+    const player = new Player("Seraphim");
+    game.players.push();
+    res.send(player);
+});
+
+module.exports = app;
