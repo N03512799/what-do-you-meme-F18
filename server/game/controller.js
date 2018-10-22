@@ -1,16 +1,17 @@
 const express = require('express');
-const {Game, Player} = require('./model');
+const { Game, Player} = require('./model');
 
 var game = new Game();
 
 const app = express.Router();
 
+
 app.get("/", function(req, res){
     res.send({...game, playedCaptions: game.getPlayedCaptions()});
-});
-app.get("captions/:id", function(req, res){
+})
+app.get("/captions/:id", function(req, res){
     res.send(game.players[req.params.id].captions());
-});
+})
 
 app.post('/players', (req, res) => {
     const player = new Player(req.body.name, game.players.length);
