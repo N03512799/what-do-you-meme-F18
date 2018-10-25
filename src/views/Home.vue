@@ -7,18 +7,6 @@
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
-
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
-</script>
