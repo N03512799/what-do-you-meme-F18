@@ -24,9 +24,8 @@ class Game {
             return this.playedCaptions.map(x=> ({ ...x, playerId: null }));
         }
     }
-// eslint-disable-next-line 
-    flipPicture(){
-        //if(!this.isDealer(playerId)) { throw new Error("Only the dealer can flip a picture")}
+    flipPicture(playerId){
+        if(!this.isDealer(playerId)) { throw new Error("Only the dealer can flip a picture")}
         this.picture = pictures[(iPicture++) % pictures.length];
     }
     submitCaption(playerId, text){
