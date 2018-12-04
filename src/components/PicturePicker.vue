@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h1>The Picture Picker</h1>
+        <a v-for="p in pictures" :key="p.id">
+            
+        </a>
     </div>
 </template>
 <script>
@@ -8,7 +10,9 @@ export default {
     data: function () {
 
     },
-    props: [pictures]
+    props: {
+        pictures: Array
+    }
 }
 </script>
 <style lang="scss">

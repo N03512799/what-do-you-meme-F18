@@ -8,8 +8,8 @@ export function GetMyCaptions(){
     return myFetch(api_root + `/captions/${playerId}`);
 }
 export function Login(name, fbid, access_token){
-    return myFetch(api_root + `/players`, { name, fbid, access_token })
-            .then(x=> playerId = x.id);
+    const user = myFetch(api_root + `/players`, { name, fbid, access_token })
+        return user.id;
 }
 export function FlipPicture(){
     return myFetch(api_root + "/picture", {})
