@@ -22,10 +22,6 @@ export function ChooseCaption(c){
     return myFetch(api_root + "/playedCaptions/choose",  {text: c.text})
 }
 
-
-
-
-
   function myFetch(url = ``, data = null) {
       let options = {
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
