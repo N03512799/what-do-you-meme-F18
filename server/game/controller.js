@@ -1,5 +1,5 @@
 const express = require('express');
-const { Game } = require('./model');
+const { Game, Player} = require('./model');
 
 var game = new Game();
 

@@ -2,7 +2,7 @@ import * as api from './api_access'
 
 window.fbAsyncInit = function() {
     FB.init({
-      appId      : '817325605325238',
+      appId      : '296547064527762',
       cookie     : true,
       xfbml      : true,
       version    : 'v3.0'
@@ -10,7 +10,8 @@ window.fbAsyncInit = function() {
       
     FB.AppEvents.logPageView();   
     
-    FB.getLoginStatus(function(response) {
+    // eslint-disable-next-line
+    FB.getLoginStatus(function(response) { 
         //statusChangeCallback(response);
     });
   };

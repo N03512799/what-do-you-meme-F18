@@ -1,4 +1,4 @@
-const api_root = "http://localhost:80/game";
+const api_root = process.env.VUE_APP_API_ROOT;
 export let playerId = null;
 
 export function GetState(){
@@ -8,8 +8,8 @@ export function GetMyCaptions(){
     return myFetch(api_root + `/captions/${playerId}`);
 }
 export function Login(name, fbid, access_token){
-    const user = myFetch(api_root + `/players`, { name, fbid, access_token })
-        return user.id;
+    return myFetch(api_root + `/players`, { name, fbid, access_token })
+            .then(x=> playerId = x.id);
 }
 export function FlipPicture(){
     return myFetch(api_root + "/picture", {})
@@ -21,6 +21,10 @@ export function SubmitCaption(c){
 export function ChooseCaption(c){
     return myFetch(api_root + "/playedCaptions/choose",  {text: c.text})
 }
+
+
+
+
 
   function myFetch(url = ``, data = null) {
       let options = {
